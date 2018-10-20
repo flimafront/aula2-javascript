@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+	
+const liga = {
+	superman: 'Metrópolis',
+	batman: 'Gothan',
+	ww: 'Themyscira'
+}
+
+console.log(Object.entries(liga));
+
+const ligaMap = new Map(Object.entries(liga));
+
+console.log(ligaMap);
+console.log(ligaMap.size);
+console.log(ligaMap.has('superman'));
+console.log(ligaMap.get('ww'));
+console.log(ligaMap.values());
+
+</script>
+
+</body>
+</html>

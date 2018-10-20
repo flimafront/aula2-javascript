@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+		
+		async function getFilms(url) {
+			try {
+				const response = await fetch(url);
+				console.log(response);
+				const data     = await response.json();
+				console.log(data);
+				data.results.map(film => {
+					console.log(film.title);
+				});
+			} catch(error) {
+				console.error('temos um erro', error);
+			}
+		}
+
+		getFilms("https://swapi.co/api/films?format=json");
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Async/Await</title>
+</head>
+<body>
+
+	<script>
+		
+		// var films = fetch("https://swapi.co/api/films?format=json");
+
+		// films.then(data => data.json())
+		// 	 .then(data => data.results.map(film => {
+		// 	 	console.log(film.title);
+		// 	 }));
+
+		// function getFilms(url) {
+		// 	return fetch(url).then(data => data.json())
+		// 	 				 .then(data => data.results.map(film => {
+		// 	 				 console.log(film.title);
+		// 	 }));
+		// }
+
+		async function getFilms(url) {
+			const response = await fetch(url);
+			console.log(response);
+			const data     = await response.json();
+			console.log(data);
+			data.results.map(film => {
+				console.log(film.title);
+			})
+
+			// return fetch(url).then(data => data.json())
+			//  				 .then(data => data.results.map(film => {
+			//  				 console.log(film.title);
+			//  }));
+		}
+
+		getFilms("https://swapi.co/api/films?format=json");
+
+	</script>
+
+</body>
+</html>
