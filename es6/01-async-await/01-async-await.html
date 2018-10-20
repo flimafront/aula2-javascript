@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Async/Await</title>
+</head>
+<body>
+
+	<script>
+		
+		var films = fetch("https://swapi.co/api/films?format=json");
+
+		films.then(data => data.json())
+			 .then(data => data.results.map(film => {
+			 	console.log(film.name);
+			 }))
+
+	</script>
+
+</body>
+</html>
